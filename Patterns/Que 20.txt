@@ -1,0 +1,46 @@
+public class Main {
+    public static void main(String[] args) {
+      Scanner scn = new Scanner(System.in);
+      int n = scn.nextInt();
+        
+      int fsp = n/2; 
+      int lsp = -1;  
+      
+       for(int i=1 ; i<=n ; i++){
+           
+           for(int j=1 ; j<=fsp ; j++){
+               System.out.print("  ");
+           }
+           System.out.print("* ");
+           
+           for(int j=1 ; j<=lsp ; j++){
+               System.out.print("  ");
+           }
+            
+           if(i > 1 && i < n) {   // Because we wants to avoid that overlapping condition means extra *
+            System.out.print("* ");   
+           }
+           
+           System.out.println();
+           
+           if(i <= n/2){
+               fsp--;
+               lsp+=2;
+           }else{
+               fsp++;
+               lsp-=2;
+           }
+       }
+    }
+}
+
+
+Output :
+
+      * 
+    *   * 
+  *       * 
+*           * 
+  *       * 
+    *   * 
+      *
